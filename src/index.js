@@ -1,41 +1,26 @@
+import headBannerFunction from "./header.js";
+import introFunction from "./intro.js";
+import pageClearFunction from "./pageclear.js";
+
+
 console.log("hello!")
 
-function components(){
+function openPage(){
     const divContent=document.querySelector('#content');
 
-    const headBannerFunction = () => {
-        const headBanner = document.createElement('div');
-        headBanner.id="headbanner";
+    const header=headBannerFunction();
+    divContent.appendChild(header);
 
-        const bannerImg = document.createElement('img');
-        bannerImg.src="../src/banner.jpeg";
-        headBanner.appendChild(bannerImg);
+    const homeButton=document.querySelector('#hometitle');
+    homeButton.addEventListener('click', function(){
+        pageClearFunction();
+    })
 
-        const headerTitle=document.createElement('div');
-        headerTitle.id="headertitle";
-        headerTitle.textContent="Restaurant Name";
-        headBanner.appendChild(headerTitle);
+    const menuButton = document.querySelector('#menutitle');
+    const contactButton = document.querySelector('#contacttitle');
 
-        divContent.appendChild(headBanner);
-
-        return divContent;
-    } 
-    
-    const introFunction = () => {
-        const intro=document.createElement('div');
-        intro.id="intro";
-    
-        const introText=document.createElement('div');
-        introText.textContent="This is so yummy boom bam boom";
-        intro.appendChild(introText);
-
-        divContent.appendChild(intro)
-        
-        return divContent;
-    }
-    
-
-    return {headBannerFunction, introFunction, divContent};
+    const intro=introFunction();
+    divContent.appendChild(intro);
 }
 
-components()
+openPage();
