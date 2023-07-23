@@ -3,12 +3,12 @@ const headBannerFunction = () => {
     headBanner.id="headbanner";
 
     const bannerImg = document.createElement('img');
-    bannerImg.src="../src/banner.jpeg";
+    bannerImg.src="../src/banner.jpg";
     headBanner.appendChild(bannerImg);
 
     const headerTitle=document.createElement('div');
     headerTitle.id="headertitle";
-    headerTitle.textContent="Restaurant Name";
+    headerTitle.textContent="Chez Julia";
     headBanner.appendChild(headerTitle);
 
     const homeTitle=document.createElement('div');
