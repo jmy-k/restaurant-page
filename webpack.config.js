@@ -1,18 +1,10 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
 
 module.exports = {
-  entry: './src/index.js',
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
+  entry: "./src/index.js",
+  devtool: 'inline-source-map', //so i can see where the errors are coming from
   module: {
     rules: [
-      {
-        test: /\.html$/,
-        use: ["html-loader"]
-      },
       {
         test: /\.(svg|png|jpe?g|gif)$/, //process these file types
         use: {
@@ -24,6 +16,15 @@ module.exports = {
           }
         }
       },
+      {
+        test: /\.css$/,
+        use: ["style-loader", // send styles into DOM
+        "css-loader"], //turn css into js
+      },
     ]
-  }
+  },
+  output: {
+    filename: "main.js",
+    path: path.resolve(__dirname, "dist"),
+  },
 };
