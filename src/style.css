@@ -1,0 +1,156 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:1rem;
+
+    padding:0;
+    margin:0;
+    height:100vh;
+}
+
+#content{
+    display:grid;
+    grid-template-rows: 0.25fr 1fr;
+    height:100%;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #ACCBE1;
+}
+
+/* home */
+#intro{
+    grid-row:2/3;
+    height:100%;
+    background-color: #FFF9A5;
+}
+
+#intro-text{
+    height:100%;
+}
+
+
+/* banner */
+#head-banner {
+    grid-row:1/2;
+
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 4fr 1fr 1fr;
+    gap:10px;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    margin:0px;
+    padding:0px;
+}
+
+#banner-image{
+    grid-column: 1/4;
+    grid-row:1/2;
+
+    width:100vw;
+    height:15vh;
+    object-fit: cover;
+    object-position:100% 30%;
+}
+
+#restaurant-title{
+    grid-column: 1/4;
+    grid-row:2/3;
+    font-size:2rem;
+
+    background-color: #ACCBE1;
+}
+
+#home-title, #menu-title, #contact-title{
+    grid-row:3/4;
+
+    font-size:1.5rem;
+}
+
+#home-title{
+    grid-column:1/2;
+}
+
+#menu-title{
+    grid-column:2/3;
+}
+
+#contact-title{
+    grid-column:3/4;
+}
+
+.selected{
+    background-color: #FFF9A5;
+}
+
+/* menu */
+#menu-container{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap:10px;
+}
+
+.menu-item{
+    display:grid;
+    grid-template-rows:repeat(3,0.5fr);
+    gap:5px;
+
+    text-align:center;
+    justify-content: center;
+    align-items:center;
+}
+
+.item-name{
+    font-size:1.2rem;
+}
+
+.item-image{
+    height:33vh;
+    width:auto;
+    object-fit: cover;
+}
+
+/* contact */
+#contact-container{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    
+    padding:16px;
+}
+
+#contact-img-container{
+    width:100%;
+    
+}
+
+#contact-img{
+    object-fit:cover;
+    width:70%;
+    height:auto;
+}
+
+#info-container{
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap:15px;
+}
+
+.contact-info-containers{
+    display:grid;
+    grid-template-columns: 0.25fr 1fr;
+    gap:20px;
+
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.icon{
+    width:60px;
+}

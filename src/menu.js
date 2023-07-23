@@ -10,13 +10,15 @@ const jeffImages = [cigJeffImage, muscleJeffImage, scubaJeffImage, sunglassJeffI
 const jeffPrices = ["$7","$22","$22","$7","$22","$1996"]
 
 const menuPage = () => {
-    const menuContainer = document.createElement('div');
+    const divContent = document.querySelector('#content');
 
-    //page title
-    const menuTitle = document.createElement('div');
-    menuTitle.className="page-title";
-    menuTitle.textContent = "Menu";
-    menuContainer.appendChild(menuTitle);
+    // the menu tab is selected - for styling
+    const menuTitle = document.querySelector('#menu-title')
+    menuTitle.classList.add('selected');
+
+    // container for all menu items
+    const menuContainer = document.createElement('div');
+    menuContainer.id="menu-container";
 
     // for each item in the jeffMenu array
     for (let i = 0; i < jeffMenu.length; i +=1){
@@ -43,7 +45,6 @@ const menuPage = () => {
         menuContainer.appendChild(menuItem);
     }
     
-    const divContent = document.querySelector('#content');
     divContent.appendChild(menuContainer);
     
     return divContent

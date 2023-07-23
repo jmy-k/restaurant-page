@@ -5,26 +5,33 @@ import phoneIcon from "./icons/phone.svg";
 
 const contactPage = () => {
     const contactContainer = document.createElement('div');
+    contactContainer.id="contact-container";
 
-    // page title
-    const contactTitle = document.createElement('div');
-    contactTitle.className="page-title";
-    contactTitle.textContent="Contact";
-    contactContainer.appendChild(contactTitle)
+    // the contact tab is selected - for styling
+    const contactTitle = document.querySelector('#contact-title')
+    contactTitle.classList.add('selected');
 
     // contact image
+    const contactImgContainer=document.createElement('div');
+    contactImgContainer.id="contact-img-container"
+
     const contactImage = document.createElement('img');
     contactImage.src = contactUsImage;
-    contactContainer.appendChild(contactImage);
+    contactImage.id="contact-img";
+    contactImgContainer.appendChild(contactImage);
+    contactContainer.appendChild(contactImgContainer);
 
     // container for contact info 
     const contactInfo = document.createElement('div');
+    contactInfo.id="info-container";
 
     // container for the location for later grid styling
     const mapContainer = document.createElement('div');
+    mapContainer.className="contact-info-containers"
 
     const mapIconImage = document.createElement('img');
     mapIconImage.src = mapIcon;
+    mapIconImage.className="icon";
     mapContainer.appendChild(mapIconImage);
 
     const mapInfo = document.createElement('div');
@@ -33,9 +40,11 @@ const contactPage = () => {
 
     //container for restaurant hours
     const clockContainer = document.createElement('div');
+    clockContainer.className="contact-info-containers";
 
     const clockIconImage = document.createElement('img');
     clockIconImage.src = clockIcon;
+    clockIconImage.className="icon";
     clockContainer.appendChild(clockIconImage);
 
     const clockInfo = document.createElement('div');
@@ -44,9 +53,11 @@ const contactPage = () => {
 
     // container for phone number
     const phoneContainer = document.createElement('div');
+    phoneContainer.className="contact-info-containers";
 
     const phoneIconImage = document.createElement('img');
     phoneIconImage.src = phoneIcon;
+    phoneIconImage.className="icon";
     phoneContainer.appendChild(phoneIconImage);
 
     const phoneInfo = document.createElement('div');
